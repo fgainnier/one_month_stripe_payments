@@ -9,10 +9,14 @@ class ChargesController < ApplicationController
 
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
-	    :amount      => params[:stripeAmount],
+	    :amount      => params[:amount],
 	    :description => 'Growth Hacking Crash Course',
 	    :currency    => 'usd'
 	  )
+
+	  purchase = Purchase.create(email: params[:stripeEmail], card: params[:stripeToken], amount: params[:amount], description: charge.description, currency: charge.currency, customer_id: customer.id, product_id: 1)
+
+	  redirect_to purchase
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
