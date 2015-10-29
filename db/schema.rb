@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20151029231358) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "length"
-    t.text     "author_image_name"
-    t.string   "author_description"
+    t.string   "author_image_name"
+    t.text     "author_description"
     t.string   "details"
     t.string   "download_url"
   end
