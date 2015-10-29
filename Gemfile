@@ -26,6 +26,12 @@ gem 'figaro'
 # Add letter opener for handling emails in development
 gem 'letter_opener', group: :development
 
+#Add activeAdmin to generate an admin interface
+gem 'activeadmin', github: 'activeadmin'
+
+#Add devise to support login for activeadmin
+gem 'devise'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
